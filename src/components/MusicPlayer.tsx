@@ -28,7 +28,15 @@ export const MusicPlayer = () => {
           </div>
           
           <div className="relative w-full flex justify-center">
-            <AlbumDisplay size="large" className="mx-auto" />
+            {/* Album display with centered player controls */}
+            <div className="relative">
+              <AlbumDisplay size="large" className="mx-auto" />
+              
+              {/* Centered player controls overlay */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-background/30 backdrop-blur-md rounded-full p-2">
+                <PlayerControls centerMode={true} />
+              </div>
+            </div>
           </div>
           
           <div className="w-full text-center md:text-left px-4 md:px-0">
@@ -40,7 +48,7 @@ export const MusicPlayer = () => {
           <div className="w-full px-4 md:px-0">
             <SongProgress />
             <div className="mt-4">
-              <PlayerControls />
+              <PlayerControls showVolume={true} />
             </div>
           </div>
         </div>

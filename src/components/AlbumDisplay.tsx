@@ -21,7 +21,7 @@ export const AlbumDisplay = ({ className, size = "medium" }: AlbumDisplayProps) 
   return (
     <div 
       className={cn(
-        "relative rounded-lg overflow-hidden shadow-xl",
+        "relative rounded-full overflow-hidden shadow-xl",
         sizeClasses[size],
         isPlaying && size !== "small" && "animate-pulse-subtle",
         className
