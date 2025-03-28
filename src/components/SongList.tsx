@@ -38,7 +38,7 @@ export const SongList = ({ className, showQueue = false }: SongListProps) => {
   const songsToRender = showQueue ? queue : allSongs;
   
   return (
-    <div className={cn("flex flex-col", className)}>
+    <div className={cn("flex flex-col h-full", className)}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <ListMusic size={16} className="text-player-foreground/70" />
@@ -54,7 +54,7 @@ export const SongList = ({ className, showQueue = false }: SongListProps) => {
         )}
       </div>
       
-      <ScrollArea className="h-full max-h-[320px] pr-2">
+      <ScrollArea className="h-[calc(100vh-350px)] max-h-[400px] pr-2">
         {songsToRender.length > 0 ? (
           <div className="space-y-1">
             {songsToRender.map((song) => (
